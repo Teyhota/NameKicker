@@ -9,3 +9,14 @@ C:\Users\Student\Documents\Visual Studio 2015\Projects\NameKicker\NameKicker\bin
 C:\Users\Student\Documents\Visual Studio 2015\Projects\NameKicker\NameKicker\obj\Debug\NameKicker.dll
 C:\Users\Student\Documents\Visual Studio 2015\Projects\NameKicker\NameKicker\obj\Debug\NameKicker.pdb
 C:\Users\Student\Documents\Visual Studio 2015\Projects\NameKicker\NameKicker\obj\Debug\NameKicker.csprojResolveAssemblyReference.cache
+C:\Users\Student\Documents\MY_PLUGINS\FINISHED\NameKicker\1.0.0.10 beta (WORKS)\NameKicker\NameKicker\bin\Debug\NameKicker.dll
+C:\Users\Student\Documents\MY_PLUGINS\FINISHED\NameKicker\1.0.0.10 beta (WORKS)\NameKicker\NameKicker\bin\Debug\NameKicker.pdb
+C:\Users\Student\Documents\MY_PLUGINS\FINISHED\NameKicker\1.0.0.10 beta (WORKS)\NameKicker\NameKicker\bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\Student\Documents\MY_PLUGINS\FINISHED\NameKicker\1.0.0.10 beta (WORKS)\NameKicker\NameKicker\bin\Debug\Assembly-CSharp.dll
+C:\Users\Student\Documents\MY_PLUGINS\FINISHED\NameKicker\1.0.0.10 beta (WORKS)\NameKicker\NameKicker\bin\Debug\Rocket.API.dll
+C:\Users\Student\Documents\MY_PLUGINS\FINISHED\NameKicker\1.0.0.10 beta (WORKS)\NameKicker\NameKicker\bin\Debug\Rocket.Core.dll
+C:\Users\Student\Documents\MY_PLUGINS\FINISHED\NameKicker\1.0.0.10 beta (WORKS)\NameKicker\NameKicker\bin\Debug\Rocket.Unturned.dll
+C:\Users\Student\Documents\MY_PLUGINS\FINISHED\NameKicker\1.0.0.10 beta (WORKS)\NameKicker\NameKicker\bin\Debug\UnityEngine.dll
+C:\Users\Student\Documents\MY_PLUGINS\FINISHED\NameKicker\1.0.0.10 beta (WORKS)\NameKicker\NameKicker\obj\Debug\NameKicker.csprojResolveAssemblyReference.cache
+C:\Users\Student\Documents\MY_PLUGINS\FINISHED\NameKicker\1.0.0.10 beta (WORKS)\NameKicker\NameKicker\obj\Debug\NameKicker.dll
+C:\Users\Student\Documents\MY_PLUGINS\FINISHED\NameKicker\1.0.0.10 beta (WORKS)\NameKicker\NameKicker\obj\Debug\NameKicker.pdb

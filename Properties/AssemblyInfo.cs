@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("NameKicker")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("LITE")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("4Unturned")]
 [assembly: AssemblyProduct("NameKicker")]
@@ -11,5 +11,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 [assembly: Guid("8484abfc-fdc1-40ab-a0e6-cdb033656b9e")]
-[assembly: AssemblyVersion("1.0.0.10")]
-[assembly: AssemblyFileVersion("1.0.0.10")]
+[assembly: AssemblyVersion("1.0.1.0")]
+[assembly: AssemblyFileVersion("1.0.1.0")]
