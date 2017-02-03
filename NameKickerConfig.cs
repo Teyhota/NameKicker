@@ -1,25 +1,32 @@
 ﻿using Rocket.API;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Xml.Serialization;
 
-public class NameKickerConfig : IRocketPluginConfiguration
+namespace NameKicker
 {
-    public static NameKickerConfig Instance;
-
-    public string BlockedName1 = "";
-    public string BlockedName2 = "";
-    public string BlockedName3 = "";
-    public string BlockedName4 = "";
-    public string BlockedName5 = "";
-
-    public void LoadDefaults()
+    public class NameKickerConfig : IRocketPluginConfiguration
     {
-        BlockedName1 = "Bob";
-        BlockedName2 = "Joe";
-        BlockedName3 = "Tim";
-        BlockedName4 = "Mary";
-        BlockedName5 = "Jane";
+        public static NameKickerConfig Instance;
+
+        public bool BanInsteadOfKick;
+        public uint BanTime;
+        [XmlArrayItem(ElementName = "Name")]
+        public List<BlockedNames> BlockedNames;
+
+        public void LoadDefaults()
+        {
+            BanInsteadOfKick = true;
+            BanTime = 3600;
+            BlockedNames = new List<BlockedNames>
+            {
+                new BlockedNames { name = new string[] { "Bob", "Joe", "Tim", "Mary", "Jane" } }
+            };
+        }
+    }
+
+    public class BlockedNames
+    {
+        public BlockedNames() { }
+        public string[] name;
     }
 }
