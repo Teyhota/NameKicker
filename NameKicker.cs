@@ -33,7 +33,7 @@ namespace NameKicker
             Rocket.Core.Logging.Logger.LogWarning("Plugin Version: 1.0.2.0 beta");
             Rocket.Core.Logging.Logger.LogWarning("For Unturned Version: 3.17.15.0");
             Rocket.Core.Logging.Logger.Log("...NameKicker has been loaded!", ConsoleColor.DarkGreen);
-            Rocket.Core.Logging.Logger.Log("Go to plugins.4Unturned.tk for support!", ConsoleColor.DarkRed); // Website returns/says that it's suspended.
+            Rocket.Core.Logging.Logger.Log("Go to plugins.4Unturned.tk for support!", ConsoleColor.DarkRed);
 
         }
 
@@ -51,7 +51,7 @@ namespace NameKicker
             {
                 return new TranslationList()
                 {
-                    {"kick_reason", "Please change your username!"},
+                    {"kick_reason", "please change your username!"},
                 };
             }
         }
@@ -67,7 +67,14 @@ namespace NameKicker
                 {
                     if (charName.Contains(a))
                     {
-                        player.Kick(Translations.Instance.Translate("kick_reason"));
+                        if (Instance.Configuration.Instance.BanInsteadOfKick)
+                        {
+                            player.Ban("kick_reason", Instance.Configuration.Instance.BanTime);
+                        }
+                        else if (!Instance.Configuration.Instance.BanInsteadOfKick)
+                        {
+                            player.Kick(Translations.Instance.Translate("kick_reason"));
+                        }
                     }
                 }
             }
