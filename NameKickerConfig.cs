@@ -1,36 +1,43 @@
 ﻿using Rocket.API;
+using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Linq;
+using System.Text;
 
-namespace NameKicker
+public class NameKickerConfig : IRocketPluginConfiguration
 {
-    public class NameKickerConfig : IRocketPluginConfiguration
+    #region Vars
+    public static NameKickerConfig Instance;
+
+    public string BlockedName1;
+    public string BlockedName2;
+    public string BlockedName3;
+    public string BlockedName4;
+    public string BlockedName5;
+    public string BlockedName6;
+    public string BlockedName7;
+    public string BlockedName8;
+    public string BlockedName9;
+    public string BlockedName10;
+    public bool BanPlayer;
+    public uint BanDuration;
+    #endregion
+
+    #region Defaults
+    public void LoadDefaults()
     {
-        #region Vars
-        public static NameKickerConfig Instance;
-
-        public bool BanPlayer;
-        public uint BanDuration;
-        [XmlArrayItem(ElementName = "Name")]
-        public List<BlockedNames> BlockedNames;
-        #endregion
-
-        #region Defaults
-        public void LoadDefaults()
-        {
-            BanPlayer = false;
-            BanDuration = 86400;
-            BlockedNames = new List<BlockedNames>
-            {
-                new BlockedNames { names = new string[] { "Bob", "Joe", "Tim", "Mary", "Jane" } }
-            };
-        }
-        #endregion
+        BlockedName1 = "Admin";
+        BlockedName2 = "Moderator";
+        BlockedName3 = "Tyler";
+        BlockedName4 = "Peter";
+        BlockedName5 = "Griffin";
+        BlockedName6 = "Bob";
+        BlockedName7 = "Joe";
+        BlockedName8 = "Tim";
+        BlockedName9 = "Mary";
+        BlockedName10 = "Jane";
+        BanPlayer = false;
+        BanDuration = 86400;
     }
-
-    public class BlockedNames
-    {
-        public BlockedNames() { }
-        public string[] names;
-    }
+    #endregion
 }

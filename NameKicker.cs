@@ -20,7 +20,7 @@ namespace NameKicker
     {
         #region Vars
         public string pluginName = "NameKicker";
-        public string pluginVersion = "1.2";
+        public string pluginVersion = "1.1";
         public string pluginDev = "Teyhota";
         public string pluginSite = "Plugins.4Unturned.tk";
         public string unturnedVersion = "3.17.16.0";
@@ -32,7 +32,6 @@ namespace NameKicker
         string oldVersionSite = myWebClient.DownloadString("http://plugins.4unturned.tk/oldversion/name-kicker/1.1");
         
         public static NameKicker Instance;
-        public static string[] ProhibitedNames;
         #endregion
 
         #region Load
@@ -40,26 +39,14 @@ namespace NameKicker
         {
             base.Load();
             Instance = this;
+            U.Events.OnPlayerConnected += Events_OnPlayerConnected;
+            //U.Events.OnPlayerDisconnected += Events_OnPlayerDisconnected;
+
             Rocket.Core.Logging.Logger.Log(" Loading...");
             Rocket.Core.Logging.Logger.LogWarning("Plugin by: " + pluginDev);
             Rocket.Core.Logging.Logger.LogWarning("Plugin Version: " + pluginVersion);
             Rocket.Core.Logging.Logger.LogWarning("For Unturned Version: " + unturnedVersion);
             Rocket.Core.Logging.Logger.LogWarning("Support: " + pluginSite);
-
-            ProhibitedNames = new string[Instance.Configuration.Instance.BlockedNames.Count];
-            int b = 0;
-            foreach (BlockedNames blocked in Instance.Configuration.Instance.BlockedNames)
-            {
-                ProhibitedNames = new string[blocked.names.Length];
-                foreach (string name in blocked.names)
-                {
-                    ProhibitedNames[b] = name;
-                    b++;
-                }
-            }
-
-            U.Events.OnPlayerConnected += Events_OnPlayerConnected;
-            //U.Events.OnPlayerDisconnected += Events_OnPlayerDisconnected;
 
             #region Update Checker
             using (var client = new WebClient())
@@ -91,11 +78,10 @@ namespace NameKicker
         #region Unload
         protected override void Unload()
         {
-            Rocket.Core.Logging.Logger.Log(" Unloading...");
+            Rocket.Core.Logging.Logger.Log(" Unloaded!");
             U.Events.OnPlayerConnected -= Events_OnPlayerConnected;
             //U.Events.OnPlayerDisconnected -= Events_OnPlayerDisconnected;
             base.Unload();
-            Rocket.Core.Logging.Logger.Log(" Unloaded!");
         }
         #endregion
 
@@ -106,7 +92,16 @@ namespace NameKicker
             {
                 return new TranslationList()
                 {
-                    {"kick_reason", "Please change your username!"}
+                    {"kick_reason_name_1", "Please change your username!"},
+                    {"kick_reason_name_2", "Please change your username!"},
+                    {"kick_reason_name_3", "Please change your username!"},
+                    {"kick_reason_name_4", "Please change your username!"},
+                    {"kick_reason_name_5", "Please change your username!"},
+                    {"kick_reason_name_6", "Please change your username!"},
+                    {"kick_reason_name_7", "Please change your username!"},
+                    {"kick_reason_name_8", "Please change your username!"},
+                    {"kick_reason_name_9", "Please change your username!"},
+                    {"kick_reason_name_10", "Please change your username!"}
                 };
             }
         }
@@ -122,29 +117,167 @@ namespace NameKicker
             {
 
                 #region Kick Players With Blocked Names
-                foreach (string a in ProhibitedNames)
+                if (charName.Contains(Instance.Configuration.Instance.BlockedName1))
                 {
-                    if (charName.Contains(a))
+                    UnturnedChat.Say("NameKicker: " + Instance.Translate("kick_reason_name_1", Color.red));
+
+                    if (Instance.Configuration.Instance.BanPlayer)
                     {
-                        if (Instance.Configuration.Instance.BanPlayer)
-                        {
-                            player.Ban("kick_reason", Instance.Configuration.Instance.BanDuration);
-                        }
-                        else if (!Instance.Configuration.Instance.BanPlayer)
-                        {
-                            player.Kick(Translations.Instance.Translate("kick_reason"));
-                        }
-                        return;
+                        Provider.ban(player.CSteamID, Instance.Translate("kick_reason_name_1"), Instance.Configuration.Instance.BanDuration);
+                    }
+
+                    else
+                    {
+                        Provider.kick(player.CSteamID, Instance.Translate("kick_reason_name_1"));
                     }
                 }
-                Rocket.Core.Logging.Logger.LogWarning(player.CharacterName + " has an ok name!");
+
+                else if (charName.Contains(Instance.Configuration.Instance.BlockedName2))
+                {
+                    UnturnedChat.Say("NameKicker: " + Instance.Translate("kick_reason_name_2", Color.red));
+
+                    if (Instance.Configuration.Instance.BanPlayer)
+                    {
+                        Provider.ban(player.CSteamID, Instance.Translate("kick_reason_name_2"), Instance.Configuration.Instance.BanDuration);
+                    }
+
+                    else
+                    {
+                        Provider.kick(player.CSteamID, Instance.Translate("kick_reason_name_2"));
+                    }
+                }
+
+                else if (charName.Contains(Instance.Configuration.Instance.BlockedName3))
+                {
+                    UnturnedChat.Say("NameKicker: " + Instance.Translate("kick_reason_name_3", Color.red));
+
+                    if (Instance.Configuration.Instance.BanPlayer)
+                    {
+                        Provider.ban(player.CSteamID, Instance.Translate("kick_reason_name_3"), Instance.Configuration.Instance.BanDuration);
+                    }
+
+                    else
+                    {
+                        Provider.kick(player.CSteamID, Instance.Translate("kick_reason_name_3"));
+                    }
+                }
+
+                else if (charName.Contains(Instance.Configuration.Instance.BlockedName4))
+                {
+                    UnturnedChat.Say("NameKicker: " + Instance.Translate("kick_reason_name_4", Color.red));
+
+                    if (Instance.Configuration.Instance.BanPlayer)
+                    {
+                        Provider.ban(player.CSteamID, Instance.Translate("kick_reason_name_4"), Instance.Configuration.Instance.BanDuration);
+                    }
+
+                    else
+                    {
+                        Provider.kick(player.CSteamID, Instance.Translate("kick_reason_name_4"));
+                    }
+                }
+
+                else if (charName.Contains(Instance.Configuration.Instance.BlockedName5))
+                {
+                    UnturnedChat.Say("NameKicker: " + Instance.Translate("kick_reason_name_5", Color.red));
+
+                    if (Instance.Configuration.Instance.BanPlayer)
+                    {
+                        Provider.ban(player.CSteamID, Instance.Translate("kick_reason_name_5"), Instance.Configuration.Instance.BanDuration);
+                    }
+
+                    else
+                    {
+                        Provider.kick(player.CSteamID, Instance.Translate("kick_reason_name_5"));
+                    }
+                }
+
+                else if (charName.Contains(Instance.Configuration.Instance.BlockedName6))
+                {
+                    UnturnedChat.Say("NameKicker: " + Instance.Translate("kick_reason_name_6", Color.red));
+
+                    if (Instance.Configuration.Instance.BanPlayer)
+                    {
+                        Provider.ban(player.CSteamID, Instance.Translate("kick_reason_name_6"), Instance.Configuration.Instance.BanDuration);
+                    }
+
+                    else
+                    {
+                        Provider.kick(player.CSteamID, Instance.Translate("kick_reason_name_6"));
+                    }
+                }
+
+                else if (charName.Contains(Instance.Configuration.Instance.BlockedName7))
+                {
+                    UnturnedChat.Say("NameKicker: " + Instance.Translate("kick_reason_name_7", Color.red));
+
+                    if (Instance.Configuration.Instance.BanPlayer)
+                    {
+                        Provider.ban(player.CSteamID, Instance.Translate("kick_reason_name_7"), Instance.Configuration.Instance.BanDuration);
+                    }
+
+                    else
+                    {
+                        Provider.kick(player.CSteamID, Instance.Translate("kick_reason_name_7"));
+                    }
+                }
+
+                else if (charName.Contains(Instance.Configuration.Instance.BlockedName8))
+                {
+                    UnturnedChat.Say("NameKicker: " + Instance.Translate("kick_reason_name_8", Color.red));
+
+                    if (Instance.Configuration.Instance.BanPlayer)
+                    {
+                        Provider.ban(player.CSteamID, Instance.Translate("kick_reason_name_8"), Instance.Configuration.Instance.BanDuration);
+                    }
+
+                    else
+                    {
+                        Provider.kick(player.CSteamID, Instance.Translate("kick_reason_name_8"));
+                    }
+                }
+
+                else if (charName.Contains(Instance.Configuration.Instance.BlockedName9))
+                {
+                    UnturnedChat.Say("NameKicker: " + Instance.Translate("kick_reason_name_9", Color.red));
+
+                    if (Instance.Configuration.Instance.BanPlayer)
+                    {
+                        Provider.ban(player.CSteamID, Instance.Translate("kick_reason_name_9"), Instance.Configuration.Instance.BanDuration);
+                    }
+
+                    else
+                    {
+                        Provider.kick(player.CSteamID, Instance.Translate("kick_reason_name_9"));
+                    }
+                }
+
+                else if (charName.Contains(Instance.Configuration.Instance.BlockedName10))
+                {
+                    UnturnedChat.Say("NameKicker: " + Instance.Translate("kick_reason_name_10", Color.red));
+
+                    if (Instance.Configuration.Instance.BanPlayer)
+                    {
+                        Provider.ban(player.CSteamID, Instance.Translate("kick_reason_name_10"), Instance.Configuration.Instance.BanDuration);
+                    }
+
+                    else
+                    {
+                        Provider.kick(player.CSteamID, Instance.Translate("kick_reason_name_10"));
+                    }
+                }
+
+                else
+                {
+                    Rocket.Core.Logging.Logger.Log("Player ok!", ConsoleColor.Magenta);
+                }
                 #endregion
             }
 
             //player joins that is admin
             else
             {
-                Rocket.Core.Logging.Logger.LogWarning(player.CharacterName + " is excused because they are an admin!");
+                Rocket.Core.Logging.Logger.Log("Player is excused because they are Admin!", ConsoleColor.Magenta);
             }
         }
         #endregion
